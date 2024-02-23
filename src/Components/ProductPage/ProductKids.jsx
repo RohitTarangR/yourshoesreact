@@ -1,8 +1,12 @@
 import React from 'react'
+import Navbar from '../Home/Navbar'
 
 const ProductKids = () => {
   return (
-    <div>ProductKids</div>
+    <>
+    <Navbar />
+    Kids
+    </>
   )
 }
 

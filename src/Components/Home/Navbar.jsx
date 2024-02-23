@@ -35,7 +35,7 @@ const Navbar = () => {
 
   return (
     <>
-      <div className="flex justify-between  py-2 relative text-black items-center bg-white ">
+      <div className="flex justify-between  py-2 sticky top-0 z-10 text-black items-center bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_5px_16px]">
         <div className="flex gap-8 font-semibold ml-16 max-xl:hidden">
           <Link
             to="/"
@@ -48,17 +48,17 @@ const Navbar = () => {
 
           <div className="dropdown inline-block relative ">
             <button className=" hover:text-red-600 hover:scale-125 transition-all duration-300">
-              <Link to="/productPage"> Product </Link>
+              Product
             </button>
             <div className="dropdown-content absolute z-10 min-w-24  bg-slate-300 text-white hidden rounded  text-center">
               <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/productPage/Men">Men</Link>
+                <Link to="/Men">Men</Link>
               </p>
               <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/productPage/Women">Women</Link>
+                <Link to="/Women">Women</Link>
               </p>
               <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/productPage/Kids">Kids</Link>
+                <Link to="/Kids">Kids</Link>
               </p>
             </div>
           </div>
@@ -92,12 +92,12 @@ const Navbar = () => {
           </Link>
         </div>
 
-        <div>
+        <div className="space-x-3">
           <button className=" max-md: px-3 -translate-x-12 hover:text-red-600 py-1 pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
             <span className="max-lg:hidden">Login</span>{" "}
             <AccountCircleOutlined />
           </button>
-          <button className=" max-md: px-5 -translate-x-16 hover:text-red-600 py-1  pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
+          <button className=" max-md:px-5 -translate-x-16 hover:text-red-600 py-1  pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
             <span className="max-lg:hidden">Cart</span> <ShoppingCartOutlined />
           </button>
           <button

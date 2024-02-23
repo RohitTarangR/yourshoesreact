@@ -6,11 +6,11 @@ import { RouterProvider, createBrowserRouter } from 'react-router-dom';
 import Service from './Components/Service/Service';
 import About from './Components/About/About';
 import Contact from './Components/Contact/Contact';
-import ProductMen from './Components/ProductPage/ProductMen.';
+import ProductMen from './Components/ProductPage/ProductMen';
 import ProductWomen from './Components/ProductPage/ProductWomen';
 import ProductKids from './Components/ProductPage/ProductKids';
-import ProductPage from './Components/ProductPage/ProductPage';
-
+import MenSinglePage from './Components/ProductPage/MenSinglePage';
+// import ProductMen from './Components/ProductPage/ProductMen';
 
 const router = createBrowserRouter([
   {
@@ -30,20 +30,20 @@ const router = createBrowserRouter([
     element: <Contact />,
   },
   {
-    path: "/ProductPage",
-    element: <ProductPage />,
+    path: "/Men",
+    element: <ProductMen /> ,
   },
   {
-    path: "/ProductPage/Men",
-    element: <ProductMen />,
-  },
-  {
-    path: "/ProductPage/Women",
+    path: "/Women",
     element: <ProductWomen />,
   },
   {
-    path: "/ProductPage/Kids",
+    path: "/Kids",
     element: <ProductKids />,
+  },
+  {
+    path: "/men/:productId",
+    element: <MenSinglePage />,
   },
 ]);
 

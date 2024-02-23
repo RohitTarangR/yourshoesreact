@@ -25,13 +25,13 @@ const product = [
     pTitle: "REEBOK",
     lTitle: "Gym Shoes For Men  (Navy)",
   },
-  {
-    id: 4,
-    imgUrl:
-      "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/6/q/6/8-394371-puma-black-matte-silver-original-imaghkpenkhn6ahn.jpeg?q=70&crop=false",
-    pTitle: "X-Tep",
-    lTitle: "Running Shoes For Men  (White)",
-  },
+  // {
+  //   id: 4,
+  //   imgUrl:
+  //     "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/6/q/6/8-394371-puma-black-matte-silver-original-imaghkpenkhn6ahn.jpeg?q=70&crop=false",
+  //   pTitle: "X-Tep",
+  //   lTitle: "Running Shoes For Men  (White)",
+  // },
 ];
 
 

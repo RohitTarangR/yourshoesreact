@@ -44,7 +44,7 @@ const ContactForm = () => {
           id=""
           cols=""
           rows="5"
-          className="bg-[#e5e9eb] px-5 py-3 mr-5 w-[600px] max-md:w-[455px] border outline-none"
+          className="bg-[#e5e9eb] px-5 py-3 mr-5 w-[600px] max-md:w-[455px] border outline-none resize-none"
           placeholder="Comment"
         ></textarea>
         <button className="bg-black text-white hover:bg-green-600 transition-all duration-500 w-56 h-10 rounded-md mt-5">
