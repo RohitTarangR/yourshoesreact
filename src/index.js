@@ -10,6 +10,9 @@ import ProductMen from './Components/ProductPage/ProductMen';
 import ProductWomen from './Components/ProductPage/ProductWomen';
 import ProductKids from './Components/ProductPage/ProductKids';
 import MenSinglePage from './Components/ProductPage/MenSinglePage';
+import Cart from './Components/Cart/Cart';
+import Login from './Components/LoginSignUp/Login';
+import SignUp from './Components/LoginSignUp/SignUp';
 // import ProductMen from './Components/ProductPage/ProductMen';
 
 const router = createBrowserRouter([
@@ -44,6 +47,18 @@ const router = createBrowserRouter([
   {
     path: "/men/:productId",
     element: <MenSinglePage />,
+  },
+  {
+    path: "/cart",
+    element: <Cart />,
+  },
+  {
+    path: "/login",
+    element: <Login />,
+  },
+  {
+    path: "/signup",
+    element: <SignUp />,
   },
 ]);
 
