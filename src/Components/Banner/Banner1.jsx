@@ -11,10 +11,10 @@ const Banner1 = () => {
           Color us excited for new, wear-with-everything neutral hues.
         </p>
         <div className="flex gap-5">
-          <button className="font-semibold rounded-md max-lg:w-40 max-lg:h-10 w-56 h-12 bg-black text-white hover:bg-white hover:text-black transition-all mb-4 duration-300">
+          <button className="font-semibold border rounded-md max-lg:w-40 max-lg:h-10 w-56 h-12 bg-black text-white hover:bg-white hover:text-black transition-all mb-4 duration-300">
             SHOP MEN
           </button>
-          <button className="font-semibold rounded-md max-lg:w-40 max-lg:h-10 w-56 h-12 bg-black text-white hover:bg-white hover:text-black transition-all mb-4 duration-300">
+          <button className="font-semibold border rounded-md max-lg:w-40 max-lg:h-10 w-56 h-12 bg-black text-white hover:bg-white hover:text-black transition-all mb-4 duration-300">
             SHOP WOMEN
           </button>
         </div>

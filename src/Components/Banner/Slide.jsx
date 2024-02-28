@@ -1,9 +1,7 @@
 import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
-import shoe1 from "../../Assests/img/shoe1.jpg"
-import shoe2 from "../../Assests/img/shoe2.jpg"
-import shoe3 from "../../Assests/img/shoe3.jpg"
-import shoe4 from "../../Assests/img/shoe4.jpg"
+import { imagesSlider } from "../../data";
+
 
 const responsive = {
   superLargeDesktop: {
@@ -27,12 +25,11 @@ const responsive = {
 const Slide = () => {
   return (
     <>
-      <div className="p-10">
+      <div className="p-20">
         <Carousel
           responsive={responsive}
           infinite={true}
           autoPlaySpeed={1000}
-          showDots={true}
           rewindWithAnimation={true}
           arrows={true}
           pauseOnHover={false}
@@ -42,20 +39,16 @@ const Slide = () => {
           removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
         >
-          <div className="object-cover w-[100%] h-[100%]">
-            <img src={shoe1} alt="" />
-          </div>
-          <div className="object-cover w-[100%] h-[100%]">
-            <img src={shoe2} alt="" />
-          </div>
-          <div className="object-cover w-[100%] h-[100%]">
-            <img src={shoe3} alt="" />
-          </div>
-          <div className="object-cover w-[100%] h-[100%]">
-            <img src={shoe4} alt="" />
-          </div>
+          {imagesSlider.map((item)=>{
+            return (
+              <>
+                <div className="w-[100%] h-[100%]">
+                  <img src={item.imgLink} alt={item.proName} />
+                </div>
+              </>
+            );
+          })}
         </Carousel>
-        
       </div>
     </>
   );

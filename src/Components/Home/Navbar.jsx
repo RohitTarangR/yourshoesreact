@@ -83,19 +83,19 @@ const Navbar = () => {
         </div>
 
         <div>
-          <Link to="/">
+          {/* <Link to="/"> */}
             <img
-              className="w-10 transform scale-150 hover:scale-125 cursor-pointer transition-all duration-300 -translate-x-32 max-xl:translate-x-32 "
+              className="w-10 transform scale-125 hover:scale-150 cursor-pointer transition-all duration-300 -translate-x-32 max-xl:translate-x-32 "
               src={l1}
               alt=""
             />
-          </Link>
+          {/* </Link> */}
         </div>
 
         <div className="space-x-3">
           <Link to="/login">
           <button className=" max-md: px-3 -translate-x-12 hover:text-red-600 py-1 pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
-            <span className="max-lg:hidden">Login</span>{" "}
+            <span className="max-lg:hidden">Login</span>
             <AccountCircleOutlined />
           </button>
           </Link>

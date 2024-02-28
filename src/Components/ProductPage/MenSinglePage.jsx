@@ -3,6 +3,8 @@ import { items } from "../../data";
 import { Link, useParams } from "react-router-dom";
 import Navbar from "../Home/Navbar";
 import { FavoriteBorderOutlined, Home } from "@mui/icons-material";
+import SingleProductCarousal from "./SingleProductCarousal"
+
 
 const MenSinglePage = () => {
   const { productId } = useParams();
@@ -28,8 +30,9 @@ const MenSinglePage = () => {
       <Navbar />
 
       <section className="grid grid-cols-2  items-center max-lg:grid-cols-1">
-        <div className="flex justify-end w-4/5 h-3/4 mx-auto p-5 max-lg:w-4/5 max-lg:h-4/5 max-md:w-full max-sm:w-full max-sm:h-full">
-          <img src={imgUrl} alt="" width={"100%"} className="object-cover" />
+        <div className="flex justify-end w-4/5 h-full mx-auto p-5 max-lg:w-4/5 max-lg:h-4/5 max-md:w-full max-sm:w-full max-sm:h-full">
+          {/* <img src={imgUrl} alt="" width={"100%"} className="object-cover" /> */}
+          <SingleProductCarousal />
         </div>
         <div className="space-y-7 p-5">
           <div className="flex space-x-4 max-lg:hidden items-center">
@@ -62,7 +65,7 @@ const MenSinglePage = () => {
               <span>40</span>
             </div>
             <div className="price font-bold text-2xl max-lg:text-xl">
-              ${price}.00
+              ₹ {price}.00
             </div>
           </div>
           <div className="btn max-lg:text-center max-sm:flex max-sm:flex-col">
