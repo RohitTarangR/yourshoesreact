@@ -14,9 +14,9 @@ const MainBanner = () => {
             <p className='text-white max-sm:text-center font-bold text-md max-sm:text-sm max-sm:w-[370px]'>Water-repellent Mizzles are cozy inside and extra grippy outside.</p>
 
             <div className=' flex mt-10 gap-8'>
-              <button className='bg-black max-lg:text-xs text-sm max-lg:w-32 max-lg:h-8  font-semibold  text-white w-44 h-10 rounded-sm transition-all duration-300 hover:bg-white hover:text-black border'> SHOP MEN</button>
+              <button className='bg-black max-lg:text-xs text-sm max-lg:w-32 max-lg:h-8  font-semibold  text-white w-44 h-10 rounded-sm transition-all duration-300 hover:bg-white hover:text-black'> SHOP MEN</button>
               
-              <button className='bg-black max-lg:text-xs text-sm max-lg:w-32 max-lg:h-8 font-semibold text-white w-44 h-10 rounded-sm transition-all duration-300 hover:bg-white hover:text-black border' >SHOP WOMEN</button>
+              <button className='bg-black max-lg:text-xs text-sm max-lg:w-32 max-lg:h-8 font-semibold text-white w-44 h-10 rounded-sm transition-all duration-300 hover:bg-white hover:text-black' >SHOP WOMEN</button>
             </div>
         </div>
 

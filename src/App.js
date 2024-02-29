@@ -4,6 +4,8 @@ import Navbar from './Components/Home/Navbar';
 import Banners from './Components/Home/Banners';
 import Stores from './Components/Home/Stores';
 import Footer from './Components/Footer/Footer';
+// import MainSlider from './Components/MainSlider';
+
 
 
 
@@ -12,6 +14,7 @@ function App() {
     <>
     <Navbar />
     <Banners />
+    {/* <MainSlider /> */}
     <Stores />
     <Footer />
     </>

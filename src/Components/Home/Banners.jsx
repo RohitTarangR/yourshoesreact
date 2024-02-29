@@ -5,11 +5,13 @@ import Banner1 from '../Banner/Banner1'
 import Slide from '../Banner/Slide'
 import NewArrival from '../Banner/NewArrival'
 import FeaturedItem from '../Banner/FeaturedItem'
+import HeroSection from '../Banner/HeroSection'
 
 const Banners = () => {
   return (
     <>
-    <MainBanner />
+    <HeroSection />
+    {/* <MainBanner /> */}
     <Favorites />
     <Banner1 />
     <FeaturedItem />
