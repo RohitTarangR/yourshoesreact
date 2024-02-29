@@ -25,7 +25,7 @@ const responsive = {
 const Slide = () => {
   return (
     <>
-      <div className="p-20">
+      <div className="p-20 max-md:hidden">
         <Carousel
           responsive={responsive}
           infinite={true}

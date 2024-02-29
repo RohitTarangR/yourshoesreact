@@ -44,7 +44,7 @@ const NewArrival = () => {
           New Arrivals
         </h1>
 
-        <div className="flex justify-around mx-auto px-10 mt-8 max-w-max">
+        <div className="flex justify-around mx-auto px-10 mt-8 max-w-max max-md:px-2">
           <div className="grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 max-[1450px]:grid-cols-3 gap-10 max-w-screen-2xl">
             {product.map((product) => (
               // <SingleProduct key={product.id} product={product} />

@@ -84,29 +84,30 @@ const Navbar = () => {
 
         <div>
           {/* <Link to="/"> */}
-            <img
-              className="w-10 transform scale-125 hover:scale-150 cursor-pointer transition-all duration-300 -translate-x-32 max-xl:translate-x-32 "
-              src={l1}
-              alt=""
-            />
+          <img
+            className="w-10 transform scale-125 hover:scale-150 cursor-pointer transition-all duration-300 -translate-x-32 max-xl:translate-x-[2rem] "
+            src={l1}
+            alt=""
+          />
           {/* </Link> */}
         </div>
 
-        <div className="space-x-3">
+        <div className="space-x-3 ">
           <Link to="/login">
-          <button className=" max-md: px-3 -translate-x-12 hover:text-red-600 py-1 pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
-            <span className="max-lg:hidden">Login</span>
-            <AccountCircleOutlined />
-          </button>
+            <button className=" max-md:-translate-x-8 px-3 -translate-x-12 hover:text-red-600 py-1 pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
+              <span className="max-lg:hidden">Login</span>
+              <AccountCircleOutlined />
+            </button>
           </Link>
           <Link to="/cart">
-          <button className=" max-md:px-5 -translate-x-16 hover:text-red-600 py-1  pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
-            <span className="max-lg:hidden">Cart</span> <ShoppingCartOutlined />
-          </button>
+            <button className=" max-md:px-2 -translate-x-16 hover:text-red-600 py-1  pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
+              <span className="max-lg:hidden">Cart</span>{" "}
+              <ShoppingCartOutlined />
+            </button>
           </Link>
           <button
             onClick={() => setIsOpen(!isOpen)}
-            className=" -translate-x-16 max-xl:inline-block hidden hover:scale-125 hover:text-red-600 transition-all duration-300"
+            className="max-md:-translate-x-20 -translate-x-16 max-xl:inline-block hidden hover:scale-125 hover:text-red-600 transition-all duration-300"
           >
             <Menu className="scale-100 " />
           </button>
