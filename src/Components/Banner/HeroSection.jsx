@@ -1,6 +1,7 @@
-import hero from "../../Assests/img/hero-image.png"
+// import hero from "../../Assests/img/hero-image.png"
 import flipkart from "../../Assests/img/flipkart.png"
 import amazon from "../../Assests/img/amazon.png"
+import BannerSwiper from "./BannerSwiper";
 
 const HeroSection = () => {
   return (
@@ -34,7 +35,8 @@ const HeroSection = () => {
         </div>
       </div>
       <div className="max-md:hidden">
-        <img src={hero} alt="hero" width={"100%"} />
+        {/* <img src={hero} alt="hero" width={"100%"} /> */}
+        <BannerSwiper />
       </div>
     </main>
   );

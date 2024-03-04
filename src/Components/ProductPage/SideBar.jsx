@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const shoesType = ["Running","Gym","Sports",]
+// const shoesType = ["Running","Gym","Sports",]
 
 const SideBar = () => {
   const filters = [

@@ -1,33 +1,10 @@
-import React from 'react'
-import Navbar from '../Home/Navbar'
-import Stores from '../Home/Stores';
-import Footer from '../Footer/Footer';
+import React from "react";
+import Navbar from "../Home/Navbar";
+import Stores from "../Home/Stores";
+import Footer from "../Footer/Footer";
 
-import ServiceBanner from "../../Assests/img/servicebanner.jpg"
-
-// const shoes = [
-//   {
-//     id: 1,
-//     name: "Shoe 1",
-//     description: "This is shoe 1",
-//     image: "shoe1.jpg",
-//     price: "$100",
-//   },
-//   {
-//     id: 2,
-//     name: "Shoe 2",
-//     description: "This is shoe 2",
-//     image: "shoe2.jpg",
-//     price: "$120",
-//   },
-//   {
-//     id: 3,
-//     name: "Shoe 3",
-//     description: "This is shoe 3",
-//     image: "shoe3.jpg",
-//     price: "$150",
-//   },
-// ];
+import ServiceBanner from "../../Assests/img/servicebanner.jpg";
+import { serviceImg } from "../../data";
 
 const Service = () => {
   return (
@@ -44,38 +21,54 @@ const Service = () => {
         </h1>
       </div>
 
-      {/* <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
-        <h1 className="text-4xl font-bold mb-10">Our Shoes</h1>
-        <div className="w-full flex flex-col items-center">
-          {shoes.map((shoe) => (
+      <section
+        id="feature"
+        class="section-p1 grid grid-cols-6 max-2xl:grid-cols-3 max-lg:grid-cols-2 max-sm:grid-cols-1 place-items-stretch flex-wrap  p-10"
+      >
+        {serviceImg.map((item) => {
+          return (
             <div
-              key={shoe.id}
-              className="w-1/2 p-4 mb-4 bg-white rounded shadow"
+              class="fe-box text-center flex flex-col justify-center items-center py-6 px-4 rounded-3xl transition-all duration-300 my-4 mx-0 hover:drop-shadow-2xl"
+              key={item.id}
             >
-              <img
-                src={shoe.image}
-                alt={shoe.name}
-                className="w-full h-64 object-cover mb-4 rounded"
-              />
-              <h2 className="text-2xl font-bold mb-2">{shoe.name}</h2>
-              <p className="mb-2">{shoe.description}</p>
-              <p className="mb-4 font-bold">{shoe.price}</p>
-              <button className="px-4 py-2 bg-blue-500 text-white rounded hover:bg-blue-600 mr-4">
-                Details
-              </button>
-              <button className="px-4 py-2 bg-green-500 text-white rounded hover:bg-green-600">
-                Buy Now
-              </button>
+              <img src={item.img} className="w-56 mb-2 rounded-xl hover:scale-110 transition-all duration-300 ease-in-out" />
+              <h6 className="rounded-lg text-base inline-block p-3 font-semibold leading-3 bg-black text-white">
+                {item.text}
+              </h6>
             </div>
-          ))}
-        </div>
-      </div> */}
+          );
+        })}
 
+        {/* <div class="fe-box">
+            <img src="./img/features/Order ahead.gif" />
+            <h6>Online Order</h6>
+        </div>
+
+        <div class="fe-box">
+            <img src="./img/features/Savings Money.gif" />
+            <h6>Save Money</h6>
+        </div>
+
+        <div class="fe-box">
+            <img src="./img/features/Promotion.gif" />
+            <h6>Promotions</h6>
+        </div>
+
+        <div class="fe-box">
+            <img src="./img/features/Happ sell.gif" />
+            <h6>Happy Sell</h6>
+        </div>
+
+        <div class="fe-box">
+            <img src="./img/features/Service 24_7.gif" />
+            <h6>F24/7 Support</h6>
+        </div> */}
+      </section>
 
       <Stores />
       <Footer />
     </>
   );
-}
+};
 
 export default Service;

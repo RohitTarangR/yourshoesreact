@@ -1,5 +1,4 @@
 import React from 'react'
-import MainBanner from '../Banner/MainBanner'
 import Favorites from '../Banner/Favorites'
 import Banner1 from '../Banner/Banner1'
 import Slide from '../Banner/Slide'
@@ -11,7 +10,6 @@ const Banners = () => {
   return (
     <>
     <HeroSection />
-    {/* <MainBanner /> */}
     <Favorites />
     <Banner1 />
     <FeaturedItem />

@@ -29,7 +29,7 @@ const MenSinglePage = () => {
       default:
         setProduct({});
     }
-  }, []);
+  }, [id,productType]);
 
   return !product ? (
     <div>No product Found</div>

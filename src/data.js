@@ -3,6 +3,103 @@ import shoe2 from "./Assests/img/shoe2.jpg";
 import shoe3 from "./Assests/img/shoe3.jpg";
 import shoe4 from "./Assests/img/shoe4.jpg";
 
+// mainBannerImages 
+import s1 from "./Assests/img/bannerSlider/s1.jfif"
+import s2 from "./Assests/img/bannerSlider/s2.jfif";
+import s3 from "./Assests/img/bannerSlider/s3.jfif";
+import s4 from "./Assests/img/bannerSlider/s4.jfif";
+import s5 from "./Assests/img/bannerSlider/s5.jfif";
+import s6 from "./Assests/img/bannerSlider/s6.jfif";
+import s7 from "./Assests/img/bannerSlider/s7.jfif";
+import s8 from "./Assests/img/bannerSlider/s8.jfif";
+import s9 from "./Assests/img/bannerSlider/s9.jfif";
+import s10 from "./Assests/img/bannerSlider/s10.jfif";
+
+// servie images gifs
+
+import gif1 from "./Assests/img/serviceImg/shipping.gif"
+import gif2 from "./Assests/img/serviceImg/ordering.gif"
+import gif3 from "./Assests/img/serviceImg/saving_money.gif"
+import gif4 from "./Assests/img/serviceImg/promotion.gif"
+import gif5 from "./Assests/img/serviceImg/selling.gif"
+import gif6 from "./Assests/img/serviceImg/service24.gif"
+
+export const MainBannerImg = [
+  {
+    id: 1,
+    img: s1,
+  },
+  {
+    id: 2,
+    img: s2,
+  },
+  {
+    id: 3,
+    img: s3,
+  },
+  {
+    id: 4,
+    img: s4,
+  },
+  {
+    id: 5,
+    img: s5,
+  },
+  {
+    id: 6,
+    img: s6,
+  },
+  {
+    id: 7,
+    img: s7,
+  },
+  {
+    id: 8,
+    img: s8,
+  },
+  {
+    id: 9,
+    img: s9,
+  },
+  {
+    id: 10,
+    img: s10,
+  },
+];
+
+export const serviceImg = [
+  {
+    id: 1,
+    text: "Free Shipping",
+    img: gif1,
+  },
+  {
+    id: 2,
+    text: "Online Order",
+    img: gif2,
+  },
+  {
+    id: 3,
+    text: "Save Money",
+    img: gif3,
+  },
+  {
+    id: 4,
+    text: "Promotions",
+    img: gif4,
+  },
+  {
+    id: 5,
+    text: "Happy Sell",
+    img: gif5,
+  },
+  {
+    id: 6,
+    text: "F24/7 Support",
+    img: gif6,
+  },
+];
+
 export const FavProduct = [
   {
     id: 1,
