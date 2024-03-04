@@ -9,17 +9,13 @@ import { Autoplay, Pagination, Navigation } from "swiper/modules";
 import { useParams } from "react-router-dom";
 import { items } from "../../data";
 const SingleProductCarousal = () => {
+  const { productId } = useParams();
+  console.log("productId:", productId);
+  console.log("items:", items);
 
-
-    const { productId } = useParams();
-    console.log("productId:", productId);
-    console.log("items:", items);
-
-    const product = items.find((item) => item.id === parseInt(productId));
-    const { id, imgUrl, subImg1, subImg2, subImg3, subImg4 } = product;
-    // const productPage = "Men";
-
-    
+  const product = items.find((item) => item.id === parseInt(productId));
+  const { subImg1, subImg2, subImg3, subImg4 } = product;
+  // const productPage = "Men";
 
   return (
     <>
@@ -34,26 +30,23 @@ const SingleProductCarousal = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>
-          <div>
-            <img className="w-full h-full object-cover" src={subImg1} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <img src={subImg2} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <img src={subImg3} alt="" />
-          </div>
-        </SwiperSlide>
-        <SwiperSlide>
-          <div>
-            <img src={subImg4} alt="" />
-          </div>
-        </SwiperSlide>
+        {items.map((item) => {
+          return (
+            <SwiperSlide>
+              <div>
+                {
+                  items.forEach((imgCarousal)=>{
+                    <img
+                      className="w-full h-full object-cover"
+                      src={imgCarousal.images}
+                      alt=""
+                    />
+                  })
+                }
+              </div>
+            </SwiperSlide>
+          );
+        })}
       </Swiper>
     </>
   );

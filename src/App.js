@@ -17,6 +17,7 @@ function App() {
     {/* <MainSlider /> */}
     <Stores />
     <Footer />
+    
     </>
   );
 }

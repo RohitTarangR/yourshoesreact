@@ -92,6 +92,7 @@ const FeaturedItem = () => {
           freeMode={true}
           modules={[FreeMode, Pagination, Autoplay]}
           autoplay={{ delay: 1000 }}
+          pagination={false}
           breakpoints={{
             // When window width is >= 640px
             640: {
