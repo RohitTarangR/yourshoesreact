@@ -33,13 +33,10 @@ const ProductMen = () => {
           </div>
           <div className="container flex flex-wrap mx-auto justify-center space-x-10 space-y-10">
             <span></span>
-            {items.map((item, i) => {
+            {items.map((item) => {
               return (
-                <div
-                  className="item m-3 text-center border border-slate-100"
-                  key={i}
-                >
-                  <Link to={`/men/${item.id}`}>
+                <div className="item m-3 text-center border border-slate-100">
+                  <Link to={`/productoverview/${item.id}?type=men`}>
                     <div className="object-cover w-96">
                       <img
                         src={item.imgUrl}

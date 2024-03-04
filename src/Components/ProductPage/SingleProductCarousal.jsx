@@ -6,17 +6,9 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/pagination";
 import { Autoplay, Pagination, Navigation } from "swiper/modules";
-import { useParams } from "react-router-dom";
-import { items } from "../../data";
-const SingleProductCarousal = () => {
-  const { productId } = useParams();
-  console.log("productId:", productId);
-  console.log("items:", items);
-
-  const product = items.find((item) => item.id === parseInt(productId));
-  const { subImg1, subImg2, subImg3, subImg4 } = product;
-  // const productPage = "Men";
-
+// import { useParams } from "react-router-dom";
+// import { items } from "../../data";
+const SingleProductCarousal = ({ images }) => {
   return (
     <>
       <Swiper
@@ -30,19 +22,11 @@ const SingleProductCarousal = () => {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        {items.map((item) => {
+        {images?.map((item) => {
           return (
             <SwiperSlide>
-              <div>
-                {
-                  items.forEach((imgCarousal)=>{
-                    <img
-                      className="w-full h-full object-cover"
-                      src={imgCarousal.images}
-                      alt=""
-                    />
-                  })
-                }
+              <div className="rounded-lg overflow-hidden">
+                <img className="w-full h-full object-cover rounded-lg" src={item} alt="" />
               </div>
             </SwiperSlide>
           );

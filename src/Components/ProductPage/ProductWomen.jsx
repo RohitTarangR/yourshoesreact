@@ -39,7 +39,7 @@ const ProductWomen = () => {
                   className="item m-3 text-center border border-slate-100"
                   key={i}
                 >
-                  <Link to={`/men/${item.id}`}>
+                  <Link to={`/productoverview/${item.id}?type=women`}>
                     <div className="object-cover w-96">
                       <img
                         src={item.imgUrl}

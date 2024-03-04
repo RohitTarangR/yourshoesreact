@@ -9,7 +9,7 @@ import Contact from './Components/Contact/Contact';
 import ProductMen from './Components/ProductPage/ProductMen';
 import ProductWomen from './Components/ProductPage/ProductWomen';
 import ProductKids from './Components/ProductPage/ProductKids';
-import MenSinglePage from './Components/ProductPage/MenSinglePage';
+import MenSinglePage from './Components/ProductPage/ProductOverView';
 import Cart from './Components/Cart/Cart';
 import Login from './Components/LoginSignUp/Login';
 import SignUp from './Components/LoginSignUp/SignUp';
@@ -34,7 +34,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/Men",
-    element: <ProductMen /> ,
+    element: <ProductMen />,
   },
   {
     path: "/Women",
@@ -45,7 +45,7 @@ const router = createBrowserRouter([
     element: <ProductKids />,
   },
   {
-    path: "/men/:productId",
+    path: "/productoverview/:id",
     element: <MenSinglePage />,
   },
   {

@@ -1,38 +1,46 @@
-import React from "react";
-import { items } from "../../data";
-import { Link, useParams } from "react-router-dom";
+import React, { useEffect, useState } from "react";
+import { WomenProduct, items } from "../../data";
+import { Link, useLocation, useParams } from "react-router-dom";
 import Navbar from "../Home/Navbar";
 import { FavoriteBorderOutlined, Home } from "@mui/icons-material";
-import SingleProductCarousal from "./SingleProductCarousal"
-
+import SingleProductCarousal from "./SingleProductCarousal";
 
 const MenSinglePage = () => {
-  const { productId } = useParams();
-  console.log("productId:", productId);
-  console.log("items:", items);
 
-  const product = items.find((item) => item.id === parseInt(productId));
 
-  if (!product) {
-    return (
-      <>
-        <Navbar />
-        <div className="text-center fs-1">This Product is not available!</div>
-      </>
-    );
-  }
+  const { id } = useParams();
+  const { search } = useLocation();
+  const [product, setProduct] = useState({});
+  const [section, setSection] = useState()
+  const productType = new URLSearchParams(search).get("type");
+  useEffect(() => {
+    switch (productType) {
+      case "men":
+        const forMan = items?.find((item) => item.id === parseInt(id));
+        setProduct(forMan)
+        setSection("Men")
+        break;
+      case "women":
+        const forWomen = WomenProduct?.find((item) => item.id === parseInt(id));
+        setProduct(forWomen);
+        setSection("Women")
+        break;
 
-  const {id, imgUrl, productName, price, desc } = product;
-  const productPage = "Men"
+      default:
+        setProduct({});
+    }
+  }, []);
 
-  return (
+  return !product ? (
+    <div>No product Found</div>
+  ) : (
     <>
       <Navbar />
 
       <section className="grid grid-cols-2  items-center max-lg:grid-cols-1">
-        <div className="flex justify-end w-4/5 h-full mx-auto p-5 max-lg:w-4/5 max-lg:h-4/5 max-md:w-full max-sm:w-full max-sm:h-full">
+        <div className="flex justify-end w-4/5 h-[90%] rounded-lg mx-auto p-5 max-lg:w-4/5 max-lg:h-4/5 max-md:w-full max-sm:w-full max-sm:h-full">
           {/* <img src={imgUrl} alt="" width={"100%"} className="object-cover" /> */}
-          <SingleProductCarousal />
+          <SingleProductCarousal images={product?.SliderImages} />
         </div>
         <div className="space-y-7 p-5">
           <div className="flex space-x-4 max-lg:hidden items-center">
@@ -40,11 +48,13 @@ const MenSinglePage = () => {
               <Home />
             </Link>
             <Link to="/">Home</Link> <span>/</span>
-            <Link to="/Men">{productPage}</Link> <span>/</span>
-            <Link to={`/men/${id}`}>{productName}</Link>
+            <Link to={`/${section}`}>{section}</Link> <span>/</span>
+            <p className="cursor-pointer">{product?.productName}</p>
           </div>
-          <h2 className="text-4xl font-bold max-lg:text-3xl">{productName}</h2>
-          <p className=" text-start">{desc}</p>
+          <h2 className="text-4xl font-bold max-lg:text-3xl">
+            {product?.productName}
+          </h2>
+          <p className=" text-start">{product?.desc}</p>
           <p className="font-bold">HighLights :</p>
           <ul className="list-disc ml-3">
             <li>Standard delivery 4–9 business days</li>
@@ -65,7 +75,7 @@ const MenSinglePage = () => {
               <span>40</span>
             </div>
             <div className="price font-bold text-2xl max-lg:text-xl">
-              ₹ {price}.00
+              ₹ {product?.price}.00
             </div>
           </div>
           <div className="btn max-lg:text-center max-sm:flex max-sm:flex-col">
@@ -79,12 +89,8 @@ const MenSinglePage = () => {
           </div>
         </div>
       </section>
-
-      
     </>
   );
 };
 
 export default MenSinglePage;
-
-

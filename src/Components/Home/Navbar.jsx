@@ -52,13 +52,13 @@ const Navbar = () => {
             </button>
             <div className="dropdown-content absolute z-10 min-w-24  bg-slate-300 text-white hidden rounded  text-center">
               <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/Men">Men</Link>
+                <Link to="/men">Men</Link>
               </p>
               <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/Women">Women</Link>
+                <Link to="/women">Women</Link>
               </p>
               <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/Kids">Kids</Link>
+                <Link to="/kids">Kids</Link>
               </p>
             </div>
           </div>

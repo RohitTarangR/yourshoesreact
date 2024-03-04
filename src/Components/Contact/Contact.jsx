@@ -44,7 +44,7 @@ const Contact = () => {
       <div className="bg-[#e5e9eb] py-10 grid grid-cols-2 place-content-center place-items-center max-lg:grid-cols-1">
         <div>
           <iframe
-          className="max-md:w-[400px]"
+          className="max-md:w-full"
             title="ParivarHomes"
             src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3669.773777714064!2d72.53749457596616!3d23.105375713231783!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e82df638cac99%3A0xff6323bffd52c2a7!2sPARIVAR%20HOMES%2C%20Gota%2C%20Ahmedabad%2C%20Gujarat%20382481!5e0!3m2!1sen!2sin!4v1705140577031!5m2!1sen!2sin"
             width="600"
