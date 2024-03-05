@@ -25,23 +25,41 @@ const Navbar = () => {
             />
           </Link>
         </div>
-        <nav className="flex space-x-5 justify-center ml-60 items-center max-xl:ml-0 max-sm:hidden uppercase text-sm">
-          <Link to="/" className="text-red-500 font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+        <nav className="flex space-x-5 justify-center ml-64 items-center max-xl:ml-0 max-sm:hidden uppercase text-sm">
+          <Link
+            to="/"
+            className="text-red-500 font-semibold hover:underline hover:underline-offset-4 hover:mb-2 hover:text-red-300 decoration-2 transition-all duration-300 ease-in-out"
+          >
             Home
           </Link>
-          <Link to="/men" className="text-black font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+          <Link
+            to="/men"
+            className="text-black font-semibold hover:underline hover:underline-offset-4 hover:mb-2 hover:text-gray-500  decoration-2 transition-all duration-300 ease-in-out"
+          >
             Men
           </Link>
-          <Link to="/women" className="text-black font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+          <Link
+            to="/women"
+            className="text-black font-semibold hover:underline hover:underline-offset-4 hover:mb-2 hover:text-gray-500 decoration-2 transition-all duration-300 ease-in-out"
+          >
             Women
           </Link>
-          <Link to="/kids" className="text-black font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+          <Link
+            to="/kids"
+            className="text-black font-semibold hover:underline hover:underline-offset-4 hover:mb-2 hover:text-gray-500 decoration-2 transition-all duration-300 ease-in-out"
+          >
             Kids
           </Link>
-          <Link to="/about" className="text-gray-500 font-normal hover:scale-110 transition-all duration-500 ease-in-out">
+          <Link
+            to="/about"
+            className="text-gray-500 font-semibold hover:underline hover:underline-offset-4 hover:mb-2 hover:text-gray-300 decoration-2 transition-all duration-300 ease-in-out"
+          >
             About
           </Link>
-          <Link to="/contact" className="text-gray-500 font-normal hover:scale-110 transition-all duration-500 ease-in-out">
+          <Link
+            to="/contact"
+            className="text-gray-500 font-semibold hover:underline hover:underline-offset-4 hover:mb-2 hover:text-gray-300 decoration-2 transition-all duration-300 ease-in-out"
+          >
             Contact
           </Link>
         </nav>
@@ -49,7 +67,7 @@ const Navbar = () => {
           <div className="search relative  max-xl:hidden">
             <input
               type="text"
-              className="bg-[#f4f5f4] text-base pl-11 py-1 outline-none rounded-lg text-gray-600"
+              className="bg-[#f4f5f4] text-base pl-10 py-1 outline-none rounded-lg text-gray-600"
               placeholder="Search"
             />
             <FontAwesomeIcon
@@ -58,9 +76,13 @@ const Navbar = () => {
             />
           </div>
           <div className="flex items-center space-x-3">
-          <FontAwesomeIcon icon={faHeart} />
-          <FontAwesomeIcon icon={faBagShopping} />
-          <FontAwesomeIcon icon={faUserCircle} />
+            <FontAwesomeIcon icon={faHeart} />
+            <Link to="/cart">
+            <FontAwesomeIcon icon={faBagShopping} />
+            </Link>
+            <Link to="/login">
+            <FontAwesomeIcon icon={faUserCircle} />
+            </Link>
           </div>
         </div>
       </main>

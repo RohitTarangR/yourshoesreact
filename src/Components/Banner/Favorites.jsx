@@ -10,7 +10,7 @@ import { ShoppingCart, ShoppingCartCheckout } from '@mui/icons-material';
 const Favorites = () => {
   return (
     <>
-      <div className="flex flex-col  items-center">
+      <div className="flex flex-col items-center max-md:mt-44">
         <div>
           <h1 className="flex text-4xl font-bold justify-center m-8">
             Our Favorites

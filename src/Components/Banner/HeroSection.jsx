@@ -34,7 +34,7 @@ const HeroSection = () => {
           </div>
         </div>
       </div>
-      <div className="max-md:hidden">
+      <div className="">
         {/* <img src={hero} alt="hero" width={"100%"} /> */}
         <BannerSwiper />
       </div>
