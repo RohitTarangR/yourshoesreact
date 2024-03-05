@@ -5,6 +5,8 @@
 
 *{
     font-family: "Poppins", sans-serif;
+    /* border: 1px solid red; */
+    scroll-behavior: smooth;
   }
 
 body {

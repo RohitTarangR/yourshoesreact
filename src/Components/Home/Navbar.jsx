@@ -1,165 +1,69 @@
-import React, { useEffect, useRef, useState } from "react";
-import {
-  ShoppingCartOutlined,
-  AccountCircleOutlined,
-  Menu,
-  } from "@mui/icons-material";
+import React from "react";
 import l1 from "../../Assests/img/Your_Shoes.png";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faAngleDown, faBagShopping, faHeart, faMagnifyingGlass, faUserCircle } from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 
-
-
-
-  
-
 const Navbar = () => {
-
-    const [isOpen, setIsOpen] = useState(false);
-
-     const node = useRef();
-
-     const handleClickOutside = (e) => {
-       if (node.current.contains(e.target)) {
-         return;
-       }
-       setIsOpen(false);
-     };
-
-     useEffect(() => {
-       document.addEventListener("mousedown", handleClickOutside);
-       return () => {
-         document.removeEventListener("mousedown", handleClickOutside);
-       };
-     }, []);
-
-
   return (
     <>
-      <div className="flex justify-between  py-2 sticky top-0 z-10 text-black items-center bg-white shadow-[rgba(17,_17,_26,_0.1)_0px_5px_16px]">
-        <div className="flex gap-8 font-semibold ml-16 max-xl:hidden">
-          <Link
-            to="/"
-            className="hover:text-red-600 hover:scale-150 transition-all duration-500"
-          >
+      <div className="bg-black py-3 flex justify-center items-center gap-2">
+        <p className="text-white text-xs text-center uppercase font-bold tracking-wider">
+          free delivery, return & exchange
+        </p>
+        <FontAwesomeIcon icon={faAngleDown} style={{ color: "white" }} />
+      </div>
+
+      <main className="flex justify-around items-center max-sm:justify-between max-sm:px-10 shadow-md sticky top-0 z-50 bg-white">
+        <div className="left">
+          <Link to="/">
+            <img
+              src={l1}
+              alt=""
+              width={70}
+              className="hover:scale-125 transition-all duration-300"
+            />
+          </Link>
+        </div>
+        <nav className="flex space-x-5 justify-center ml-60 items-center max-xl:ml-0 max-sm:hidden uppercase text-sm">
+          <Link to="/" className="text-red-500 font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
             Home
           </Link>
-
-          {/* dropdown */}
-
-          <div className="dropdown inline-block relative ">
-            <button className=" hover:text-red-600 hover:scale-125 transition-all duration-300">
-              Product
-            </button>
-            <div className="dropdown-content absolute z-10 min-w-24  bg-slate-300 text-white hidden rounded  text-center">
-              <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/men">Men</Link>
-              </p>
-              <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/women">Women</Link>
-              </p>
-              <p className="text-black px-8 py-1 hover:text-white hover:bg-black cursor-pointer transition-all duration-300">
-                <Link to="/kids">Kids</Link>
-              </p>
-            </div>
-          </div>
-          <Link
-            to="/service"
-            className="hover:text-red-600 hover:scale-150 transition-all duration-500"
-          >
-            Service
+          <Link to="/men" className="text-black font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+            Men
           </Link>
-          <Link
-            to="/about"
-            className="hover:text-red-600 hover:scale-150 transition-all duration-500"
-          >
+          <Link to="/women" className="text-black font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+            Women
+          </Link>
+          <Link to="/kids" className="text-black font-semibold hover:scale-110 transition-all duration-500 ease-in-out">
+            Kids
+          </Link>
+          <Link to="/about" className="text-gray-500 font-normal hover:scale-110 transition-all duration-500 ease-in-out">
             About
           </Link>
-          <Link
-            to="/contact"
-            className="hover:text-red-600 hover:scale-150 transition-all duration-500"
-          >
-            Contact Us
+          <Link to="/contact" className="text-gray-500 font-normal hover:scale-110 transition-all duration-500 ease-in-out">
+            Contact
           </Link>
-        </div>
-
-        <div>
-          {/* <Link to="/"> */}
-          <img
-            className="w-10 transform scale-125 hover:scale-150 cursor-pointer transition-all duration-300 -translate-x-32 max-xl:translate-x-[2rem] "
-            src={l1}
-            alt=""
-          />
-          {/* </Link> */}
-        </div>
-
-        <div className="space-x-3 ">
-          <Link to="/login">
-            <button className=" max-md:-translate-x-8 px-3 -translate-x-12 hover:text-red-600 py-1 pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
-              <span className="max-lg:hidden">Login</span>
-              <AccountCircleOutlined />
-            </button>
-          </Link>
-          <Link to="/cart">
-            <button className=" max-md:px-2 -translate-x-16 hover:text-red-600 py-1  pb-2 rounded-md font-semibold hover:scale-110 transition-all duration-300">
-              <span className="max-lg:hidden">Cart</span>{" "}
-              <ShoppingCartOutlined />
-            </button>
-          </Link>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="max-md:-translate-x-20 -translate-x-16 max-xl:inline-block hidden hover:scale-125 hover:text-red-600 transition-all duration-300"
-          >
-            <Menu className="scale-100 " />
-          </button>
-        </div>
-      </div>
-
-      <div className="nav 2xl:hidden xl:hidden" ref={node}>
-        {isOpen && (
-          <div
-            className={`flex flex-col w-1/4 max-sm:w-2/4 text-black h-[55%] bg-gray-300 absolute top-3 rounded-md z-50 right-14 ${
-              isOpen ? "block" : "hidden"
-            } transition-all duration-300`}
-          >
-            <button
-              onClick={() => setIsOpen(!isOpen)}
-              className="text-lg bg-black text-white hover:text-red-600 transition-all duration-300 max-xl:inline-block hidden py-3"
-            >
-              Close
-            </button>
-            <Link
-              to="/"
-              className="text-center text-lg mt-5 hover:text-red-600 transition-all duration-300 hover:scale-125"
-            >
-              Home
-            </Link>
-            <Link
-              to="/productPage"
-              className="text-center text-lg mt-10 hover:text-red-600 transition-all duration-300 hover:scale-125"
-            >
-              Product
-            </Link>
-            <Link
-              to="/Service"
-              className="text-center text-lg mt-10 hover:text-red-600 transition-all duration-300 hover:scale-125"
-            >
-              Service
-            </Link>
-            <Link
-              to="/About"
-              className="text-center text-lg mt-10 hover:text-red-600 transition-all duration-300 hover:scale-125"
-            >
-              About
-            </Link>
-            <Link
-              to="/contact"
-              className="text-center text-lg mt-10 hover:text-red-600 transition-all duration-300 hover:scale-125"
-            >
-              Contact us
-            </Link>
+        </nav>
+        <div className="right flex items-center space-x-5">
+          <div className="search relative  max-xl:hidden">
+            <input
+              type="text"
+              className="bg-[#f4f5f4] text-base pl-11 py-1 outline-none rounded-lg text-gray-600"
+              placeholder="Search"
+            />
+            <FontAwesomeIcon
+              icon={faMagnifyingGlass}
+              className="absolute left-2 top-2"
+            />
           </div>
-        )}
-      </div>
+          <div className="flex items-center space-x-3">
+          <FontAwesomeIcon icon={faHeart} />
+          <FontAwesomeIcon icon={faBagShopping} />
+          <FontAwesomeIcon icon={faUserCircle} />
+          </div>
+        </div>
+      </main>
     </>
   );
 };
