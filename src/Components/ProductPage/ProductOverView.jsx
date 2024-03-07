@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { WomenProduct, items } from "../../data";
+import { WomenProduct, items, kidsProduct } from "../../data";
 import { Link, useLocation, useParams } from "react-router-dom";
 import Navbar from "../Home/Navbar";
 import { FavoriteBorderOutlined, Home } from "@mui/icons-material";
@@ -24,6 +24,11 @@ const MenSinglePage = () => {
         const forWomen = WomenProduct?.find((item) => item.id === parseInt(id));
         setProduct(forWomen);
         setSection("Women")
+        break;
+      case "kids":
+        const forKids = kidsProduct?.find((item) => item.id === parseInt(id));
+        setProduct(forKids);
+        setSection("Kids")
         break;
 
       default:
