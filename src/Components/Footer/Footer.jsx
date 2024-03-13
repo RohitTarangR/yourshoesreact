@@ -78,7 +78,13 @@ const Footer = () => {
             <Link to="/"> Home </Link>
           </p>
           <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
-            <Link to="/productPage"> Product </Link>
+            <Link to="/men"> Men </Link>
+          </p>
+          <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
+            <Link to="/men"> Women </Link>
+          </p>
+          <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
+            <Link to="/men"> Kids </Link>
           </p>
           <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
             <Link to="/service"> Service </Link>

@@ -44,14 +44,13 @@ const NewArrival = () => {
           New Arrivals
         </h1>
 
-        <div className="flex justify-around mx-auto px-10 mt-8 max-w-max max-md:px-2">
-          <div className="grid grid-cols-4 max-lg:grid-cols-2 max-md:grid-cols-1 max-[1450px]:grid-cols-3 gap-10 max-w-screen-2xl">
+        <div className="flex flex-wrap gap-5 justify-center  mx-auto mt-8">
             {product.map((product) => (
               // <SingleProduct key={product.id} product={product} />
               <div className="relative group">
                 <div className="overflow-hidden aspect-w-1 aspect-h-1">
                   <img
-                    className="object-cover w-full h-72 transition-all duration-300 group-hover:scale-105"
+                    className="object-cover w-80 h-72 transition-all duration-300 group-hover:scale-105"
                     src={product.imgUrl}
                     alt=""
                   />
@@ -101,7 +100,7 @@ const NewArrival = () => {
                 </div>
               </div>
             ))}
-          </div>
+          {/* </div> */}
         </div>
       </div>
     </>

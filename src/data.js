@@ -125,6 +125,14 @@ export const FavProduct = [
     price: 6295,
     SliderImages: ["", "", "", ""],
   },
+  {
+    id: 4,
+    imgUrl:
+      "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/c762677a-8d7c-4eb1-b706-7daf79edc118/sb-force-58-skate-shoes-LJNW5L.png",
+    productName: "Nike Air Max Pulse",
+    price: 6295,
+    SliderImages: ["", "", "", ""],
+  },
 ];
 
 export const RecommendProduct = [
