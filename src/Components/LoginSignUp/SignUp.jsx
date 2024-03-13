@@ -9,7 +9,7 @@ function Login() {
     <>
       <Navbar />
       <section>
-        <div className="relative flex flex-col justify-center min-h-screen overflow-hidden">
+        <div className="relative flex flex-col my-5 overflow-hidden">
           <div className="w-full p-6 m-auto bg-white rounded-md shadow-xl lg:max-w-xl px-10">
             <div className="flex items-center justify-between">
               <h1 className="text-2xl font-semibold text-black uppercase">

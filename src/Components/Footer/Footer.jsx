@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import {
   Facebook,
   Instagram,
@@ -10,14 +10,10 @@ import {
 } from "@mui/icons-material/";
 import { useForm } from "@formspree/react";
 import l1 from "../../Assests/img/Your_Shoes.png";
-import { Link } from 'react-router-dom';
-
+import { Link } from "react-router-dom";
 
 const Footer = () => {
-
-
-    const [state, handleSubmit] = useForm("xwkgpljo");
-
+  const [state, handleSubmit] = useForm("xwkgpljo");
 
   return (
     <>
@@ -78,7 +74,13 @@ const Footer = () => {
             <Link to="/"> Home </Link>
           </p>
           <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
-            <Link to="/productPage"> Product </Link>
+            <Link to="/men"> Men </Link>
+          </p>
+          <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
+            <Link to="/men"> Women </Link>
+          </p>
+          <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
+            <Link to="/men"> Kids </Link>
           </p>
           <p className="text-md mt-1 hover:text-slate-400 hover:rotate-6 hover:scale-125 transition-all duration-300 cursor-pointer">
             <Link to="/service"> Service </Link>
@@ -96,7 +98,7 @@ const Footer = () => {
           </h1>
 
           <div className="my-6">
-            <form onSubmit={handleSubmit} className='flex'>
+            <form onSubmit={handleSubmit} className="flex">
               <input
                 id="email"
                 type="email"
@@ -108,7 +110,7 @@ const Footer = () => {
               <button
                 type="submit"
                 disabled={state.submitting}
-                className="bg-green-600 text-white outline-none h-10 w-20 rounded-e-md hover:bg-green-700 hover:text-white transition-all duration-500"
+                className="bg-green-600 text-white outline-none h-10 w-20 text-xs rounded-e-md hover:bg-green-700 hover:text-white transition-all duration-500"
               >
                 Subscribe
               </button>
@@ -125,6 +127,6 @@ const Footer = () => {
       </div>
     </>
   );
-}
+};
 
-export default Footer
+export default Footer;

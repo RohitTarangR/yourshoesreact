@@ -44,7 +44,7 @@ const router = createBrowserRouter([
     element: <MenSinglePage />,
   },
   {
-    path: "/cart",
+    path: "/cart/:id",
     element: <Cart />,
   },
   {

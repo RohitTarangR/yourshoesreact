@@ -84,9 +84,11 @@ const MenSinglePage = () => {
             </div>
           </div>
           <div className="btn max-lg:text-center max-sm:flex max-sm:flex-col">
-            <button className="w-44 max-sm:w-full max-sm:my-2 max-lg:w-60 h-12 bg-black text-white text-[16px] rounded-lg mr-10">
-              Add to Cart
-            </button>
+            <Link to={`/cart/${product?.id}?type=${section}`}>
+              <button className="w-44 max-sm:w-full max-sm:my-2 max-lg:w-60 h-12 bg-black text-white text-[16px] rounded-lg mr-10">
+                Add to Cart
+              </button>
+            </Link>
             <button className="w-44 max-sm:w-full max-sm:my-2 max-lg:w-60 h-12 bg-white text-black border border-gray-400 text-[16px] rounded-lg">
               <FavoriteBorderOutlined className="scale-75 mb-1" /> Add to
               WishList

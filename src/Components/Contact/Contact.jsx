@@ -55,7 +55,7 @@ const Contact = () => {
             referrerpolicy="no-referrer-when-downgrade"
           ></iframe>
         </div>
-        <div className="w-96 ml-10 ">
+        <div className="w-full ml-10 max-lg:ml-0">
           <div className="flex  my-10">
             <LocationOnOutlined />
             <p className="ml-3">
@@ -100,7 +100,7 @@ const Contact = () => {
             name=""
             id=""
             placeholder="Email"
-            className="w-96 h-10 px-5 my-3 outline-none bg-black border border-white text-white rounded-md "
+            className="w-full h-10 px-5 my-3 outline-none bg-black border border-white text-white rounded-md "
           />
           <East className="absolute top-5 right-4 hover:scale-75 transition-all duration-300 cursor-pointer" />
         </div>

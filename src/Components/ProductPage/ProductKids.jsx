@@ -51,10 +51,12 @@ const ProductKids = () => {
                   </p>
 
                   <div className="flex flex-col justify-center relative">
-                    <button className=" text-sm max-sm:text-xs font-bold w-full bg-black h-[40px] max-sm:h-[35px] my-2 flex items-center justify-center rounded-md cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-zinc-300 before:to-zinc-300 hover:text-black before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 text-[#fff]">
-                      Add to Cart
-                      <ShoppingCart className="mx-2 scale-90 max-sm:scale-75" />
-                    </button>
+                    <Link to={`/cart/${item.id}?type=kids`}>
+                      <button className=" text-sm max-sm:text-xs font-bold w-full bg-black h-[40px] max-sm:h-[35px] my-2 flex items-center justify-center rounded-md cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-zinc-300 before:to-zinc-300 hover:text-black before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 text-[#fff]">
+                        Add to Cart
+                        <ShoppingCart className="mx-2 scale-90 max-sm:scale-75" />
+                      </button>
+                    </Link>
 
                     <button className=" text-sm max-sm:text-xs font-bold w-full  bg-zinc-300 h-[40px] max-sm:h-[35px] my-1 flex items-center justify-center rounded-md cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-black before:to-black hover:text-zinc-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 text-[#000]">
                       Buy Now

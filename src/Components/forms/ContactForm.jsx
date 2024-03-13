@@ -37,12 +37,12 @@ const ContactForm = () => {
         className="flex flex-col justify-center items-center relative"
       >
         <h1 className="text-5xl font-bold max-lg:text-3xl">Contact Us</h1>
-        <p className="w-[600px] max-md:w-[450px] max-md:mt-4 mt-10 mb-12">
+        <p className="w-[600px] max-md:w-[450px] max-sm:w-[21.5rem] max-md:mt-4 mt-10 mb-12 text-justify">
           Please reach out to us in case of any concerns. Please fill out this
           form and we will get back to you at the earliest. Contact us for
           anything related to our company and services.
         </p>
-        <p className="justify-start absolute max-md:top-40 top-44 left-2 text-green-500 font-bold">
+        <p className="justify-start absolute max-lg:top-[10rem] max-md:top-40 max-sm:top-44 top-44 left-2 text-green-500 font-bold">
           Feel free to contact us*
         </p>
         <div className="flex">
@@ -50,7 +50,7 @@ const ContactForm = () => {
             type="text"
             value={formData.name}
             onChange={handleChange}
-            className="bg-[#e5e9eb] px-5 w-64 border h-12 outline-none max-md:w-48"
+            className="bg-[#e5e9eb] px-5 w-64 border h-12 outline-none max-md:w-48 max-sm:w-40"
             placeholder="Name"
             name="name"
           />
@@ -58,7 +58,7 @@ const ContactForm = () => {
             type="email"
             value={formData.email}
             onChange={handleChange}
-            className="bg-[#e5e9eb] px-5 w-64 mx-5 border h-12 outline-none max-md:w-48"
+            className="bg-[#e5e9eb] px-5 w-64 mx-5 border h-12 outline-none max-md:w-48 max-sm:w-40"
             placeholder="Email"
             name="email"
           />
@@ -67,7 +67,7 @@ const ContactForm = () => {
           type="tel"
           value={formData.number}
           onChange={handleChange}
-          className="bg-[#e5e9eb] px-5 mr-5 w-[600px] max-md:w-[455px] my-3 border h-12 outline-none"
+          className="bg-[#e5e9eb] px-5 mr-5 w-[600px] max-md:w-[455px] max-sm:w-[21.5rem] my-3 border h-12 outline-none"
           placeholder="Phone Number"
           name="number"
         />
@@ -76,7 +76,7 @@ const ContactForm = () => {
           value={formData.message}
           onChange={handleChange}
           rows="5"
-          className="bg-[#e5e9eb] px-5 py-3 mr-5 w-[600px] max-md:w-[455px] border outline-none resize-none"
+          className="bg-[#e5e9eb] px-5 py-3 mr-5 w-[600px] max-md:w-[455px] max-sm:w-[21.5rem] border outline-none resize-none"
           placeholder="Message"
         ></textarea>
         <button

@@ -24,6 +24,13 @@ import gif4 from "./Assests/img/serviceImg/promotion.gif";
 import gif5 from "./Assests/img/serviceImg/selling.gif";
 import gif6 from "./Assests/img/serviceImg/service24.gif";
 
+// store images
+
+import store1 from "./Assests/img/storeImg/s1.jpg";
+import store2 from "./Assests/img/storeImg/s2.jpg";
+import store3 from "./Assests/img/storeImg/s3.jpg";
+import store4 from "./Assests/img/storeImg/s4.jpg";
+
 export const MainBannerImg = [
   {
     id: 1,
@@ -125,44 +132,36 @@ export const FavProduct = [
     price: 6295,
     SliderImages: ["", "", "", ""],
   },
-];
-
-export const RecommendProduct = [
   {
-    id: 1,
+    id: 4,
     imgUrl:
-      "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/q/r/j/8-977419110012l908-42-xtep-moon-grey-foggy-grey-original-imagv4ff3dwfbkqd.jpeg?q=70",
-    pTitle: "X-Tep",
-    lTitle: "Running Shoes For Men  (Grey)",
-  },
-  {
-    id: 2,
-    imgUrl:
-      "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/s/0/v/8-9774191100126435-42-xtep-black-canvas-white-original-imagv4ffjhtttgcd.jpeg?q=70",
-    pTitle: "X-Tep",
-    lTitle: "Running Shoes For Men  (Black)",
-  },
-  {
-    id: 3,
-    imgUrl:
-      "https://rukminim2.flixcart.com/image/832/832/xif0q/shoe/k/p/7/8-877319110019i545-42-xtep-white-lagoon-green-original-imagv42kawaw8hmz.jpeg?q=70",
-    pTitle: "X-Tep",
-    lTitle: "Running Shoes For Men  (White)",
+      "https://static.nike.com/a/images/c_limit,w_592,f_auto/t_product_v1/c762677a-8d7c-4eb1-b706-7daf79edc118/sb-force-58-skate-shoes-LJNW5L.png",
+    productName: "Nike Air Max Pulse",
+    price: 6295,
+    SliderImages: ["", "", "", ""],
   },
 ];
 
 export const OurStore = [
   {
     id: 1,
-    img: "https://www.superkicks.in/cdn/shop/files/1_9f867289-2726-4803-aaf5-46d6042cdf04.jpg?v=1690967178",
+    img: store1,
+    city: "Kosamba",
   },
   {
     id: 2,
-    img: "https://www.superkicks.in/cdn/shop/files/4_d1ad8724-0844-4f50-a570-0ff794b664a7.jpg?v=1690967231",
+    img: store2,
+    city: "Thara",
   },
   {
     id: 3,
-    img: "https://www.superkicks.in/cdn/shop/files/2_0e31b185-2f03-4d6b-b7ec-695589fe2c5b.jpg?v=1690967272",
+    img: store3,
+    city: "Ghatlodiya",
+  },
+  {
+    id: 4,
+    img: store4,
+    city: "Gota",
   },
 ];
 
@@ -1105,7 +1104,6 @@ export const WomenProduct = [
     ],
   },
 ];
-
 
 export const kidsProduct = [
   {
