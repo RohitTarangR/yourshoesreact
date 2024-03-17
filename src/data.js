@@ -132,6 +132,9 @@ export const FavProduct = [
     price: 6295,
     SliderImages: ["", "", "", ""],
   },
+];
+
+export const RecommendProduct = [
   {
     id: 4,
     imgUrl:

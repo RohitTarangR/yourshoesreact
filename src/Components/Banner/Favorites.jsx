@@ -9,7 +9,9 @@ const Favorites = ({ title }) => {
       <div className="flex flex-col items-center max-md:mt-44">
         <div>
           <h1 className="flex text-3xl font-bold justify-center">{title}</h1>
-
+          <h1 className="flex text-3xl font-bold justify-center">
+            Our Favorites
+          </h1>
           {/* <div className="flex gap-72 max-xl:gap-52 max-lg:gap-32 max-md:gap-20 max-lg:text-base max-md:text-sm max-sm:gap-10 font-bold text-lg">
             <p className="cursor-pointer">FOR EVERYDAY</p>
             <p className="cursor-pointer">FOR ACTIVITY</p>
@@ -26,6 +28,7 @@ const Favorites = ({ title }) => {
                   class="item m-3 text-center border border-slate-100"
                   key={i}
                 >
+
                   <div className="object-cover w-72 max-md:w-44">
                     <img
                       src={item.imgUrl}
@@ -33,6 +36,15 @@ const Favorites = ({ title }) => {
                       className="w-full max-md:h-48 object-cover"
                     />
                   </div>
+
+                    <div className="object-cover w-72 max-md:w-44">
+                      <img
+                        src={item.imgUrl}
+                        alt={item.productName}
+                        className="w-full max-md:h-48 object-cover"
+                      />
+                    </div>
+
                   <p>{item.productName}</p>
                   <p className="font-semibold">MRP: ₹ {item.price}.00</p>
                   <div className="flex flex-col justify-center relative">
