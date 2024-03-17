@@ -2,6 +2,7 @@ import shoe1 from "./Assests/img/shoe1.jpg";
 import shoe2 from "./Assests/img/shoe2.jpg";
 import shoe3 from "./Assests/img/shoe3.jpg";
 import shoe4 from "./Assests/img/shoe4.jpg";
+// import shoe4 from "./Assests/img/shoe4.jpg";
 
 // mainBannerImages
 import s1 from "./Assests/img/bannerSlider/s1.jfif";
