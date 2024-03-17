@@ -6,35 +6,33 @@ import { FavoriteBorderOutlined, Home } from "@mui/icons-material";
 import SingleProductCarousal from "./SingleProductCarousal";
 
 const MenSinglePage = () => {
-
-
   const { id } = useParams();
   const { search } = useLocation();
   const [product, setProduct] = useState({});
-  const [section, setSection] = useState()
+  const [section, setSection] = useState();
   const productType = new URLSearchParams(search).get("type");
   useEffect(() => {
     switch (productType) {
       case "men":
         const forMan = items?.find((item) => item.id === parseInt(id));
-        setProduct(forMan)
-        setSection("Men")
+        setProduct(forMan);
+        setSection("Men");
         break;
       case "women":
         const forWomen = WomenProduct?.find((item) => item.id === parseInt(id));
         setProduct(forWomen);
-        setSection("Women")
+        setSection("Women");
         break;
       case "kids":
         const forKids = kidsProduct?.find((item) => item.id === parseInt(id));
         setProduct(forKids);
-        setSection("Kids")
+        setSection("Kids");
         break;
 
       default:
         setProduct({});
     }
-  }, [id,productType]);
+  }, [id, productType]);
 
   return !product ? (
     <div>No product Found</div>

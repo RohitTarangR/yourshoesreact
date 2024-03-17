@@ -141,7 +141,7 @@ const Navbar = () => {
           </div>
           <div className="flex items-center space-x-3">
             <FontAwesomeIcon icon={faHeart} />
-            <Link to="/cart">
+            <Link to="/cart/:id">
               <FontAwesomeIcon icon={faBagShopping} />
             </Link>
             <Link to="/login">

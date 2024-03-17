@@ -9,7 +9,7 @@ const Cart = () => {
   const { id } = useParams();
   const { search } = useLocation();
   const [product, setProduct] = useState({});
-  // const [section, setSection] = useState()
+  const [section, setSection] = useState()
   const productType = new URLSearchParams(search).get("type");
 
   useEffect(() => {

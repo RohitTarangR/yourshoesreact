@@ -9,11 +9,6 @@ const Favorites = ({ title }) => {
       <div className="flex flex-col items-center max-md:mt-44">
         <div>
           <h1 className="flex text-3xl font-bold justify-center">{title}</h1>
-          {/* <div className="flex gap-72 max-xl:gap-52 max-lg:gap-32 max-md:gap-20 max-lg:text-base max-md:text-sm max-sm:gap-10 font-bold text-lg">
-            <p className="cursor-pointer">FOR EVERYDAY</p>
-            <p className="cursor-pointer">FOR ACTIVITY</p>
-            <p className="cursor-pointer">FOR THE RAIN</p>
-          </div> */}
         </div>
         <hr className="bg-[#D3D4D5] h-[2px] w-[80%] my-5 mx-auto" />
 
