@@ -42,7 +42,7 @@ const Slide = () => {
           {imagesSlider.map((item)=>{
             return (
               <>
-                <div className="w-[100%] h-[100%]">
+                <div className="w-[100%] h-[100%]" key={item.id}>
                   <img src={item.imgLink} alt={item.proName} />
                 </div>
               </>

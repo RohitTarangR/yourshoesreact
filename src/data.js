@@ -178,10 +178,10 @@ export const OurStore = [
 ];
 
 export const imagesSlider = [
-  { imgLink: shoe1, proName: "shoe" },
-  { imgLink: shoe2, proName: "shoe" },
-  { imgLink: shoe3, proName: "shoe" },
-  { imgLink: shoe4, proName: "shoe" },
+  { id: 1, imgLink: shoe1, proName: "shoe" },
+  { id: 2, imgLink: shoe2, proName: "shoe" },
+  { id: 3, imgLink: shoe3, proName: "shoe" },
+  { id: 4, imgLink: shoe4, proName: "shoe" },
 ];
 
 export const TeamMem = [

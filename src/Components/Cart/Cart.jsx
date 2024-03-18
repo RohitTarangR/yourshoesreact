@@ -9,8 +9,9 @@ const Cart = () => {
   const { id } = useParams();
   const { search } = useLocation();
   const [product, setProduct] = useState({});
-  const [section, setSection] = useState()
+  // const [section, setSection] = useState();
   const productType = new URLSearchParams(search).get("type");
+  const deliveryFee = 250;
 
   useEffect(() => {
     switch (productType) {
@@ -41,7 +42,7 @@ const Cart = () => {
         className="py-16 px-40 max-md:px-10 max-sm:p-5 max-sm:text-xs"
       >
         {!product ? (
-            <p>There are no items in your bag.</p>
+          <p>There are no items in your bag.</p>
         ) : (
           <div className="flex flex-wrap justify-around ">
             <div className="">
@@ -54,18 +55,18 @@ const Cart = () => {
                     <img src={product?.imgUrl} alt="" />
                   </div>
                   <div className="space-y-2">
-                    <div className="flex justify-between items-center">
+                    <div className="flex max-sm:flex-col max-sm:justify-normal max-sm:items-start justify-between items-center">
                       <p className="font-semibold text-start">
                         {product?.productName}
                       </p>
-                      <p className="font-semibold text-end">
+                      <p className="font-semibold text-end  max-sm:mt-1 ">
                         MRP: ₹ {product?.price}
                       </p>
                     </div>
-                    {/* <p className="text-gray-600">Basketball Shoes</p>
+                    <p className="text-gray-600">Basketball Shoes</p>
                     <p className="text-gray-600">
                       Black/Bright Crimson/Wolf Grey/White
-                    </p> */}
+                    </p>
                     <div className="flex space-x-10">
                       <div className="flex space-x-3">
                         <p className="text-gray-600">Size </p>
@@ -103,18 +104,25 @@ const Cart = () => {
               </h2>
               <div>
                 <table border={"none"} className="space-y-5 w-full">
-                  <tr>
-                    <td>Subtotal</td>
-                    <td className="text-end">₹ 8 495.00</td>
-                  </tr>
+                  <thead>
+                    <tr>
+                      <td>Subtotal</td>
+                      <td className="text-end">₹ {product?.price}</td>
+                    </tr>
+                  </thead>
+                  <tbody>
+
                   <tr>
                     <td>Estimated Delivery & Handling</td>
-                    <td className="text-end">₹ 1 250.00</td>
+                    <td className="text-end">₹ {deliveryFee}</td>
                   </tr>
-                  <tr>
+                  <tr className="font-semibold">
                     <td>Total</td>
-                    <td className="text-end">₹ 9 745.00</td>
+                    <td className="text-end">
+                      ₹{product?.price + deliveryFee}
+                    </td>
                   </tr>
+                  </tbody>
                 </table>
                 <hr className="my-5" />
               </div>

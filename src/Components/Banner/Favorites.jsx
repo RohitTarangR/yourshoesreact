@@ -13,18 +13,18 @@ const Favorites = ({ title }) => {
         <hr className="bg-[#D3D4D5] h-[2px] w-[80%] my-5 mx-auto" />
 
         <div>
-          <div class="container flex flex-wrap mx-auto justify-center">
-            {FavProduct.map((item, i) => {
+          <div className="container flex flex-wrap mx-auto justify-center">
+            {FavProduct.map((item) => {
               return (
                 <div
-                  class="item m-3 text-center border border-slate-100"
-                  key={i}
+                  className="item m-3 text-center border border-slate-100"
+                  key={item.id}
                 >
-                  <div className="object-cover w-72 max-md:w-44">
+                  <div className="object-cover w-72 max-md:w-44 max-sm:w-36">
                     <img
                       src={item.imgUrl}
                       alt={item.productName}
-                      className="w-full max-md:h-48 object-cover"
+                      className="w-full max-md:h-48 max-sm:h-40 object-cover"
                     />
                   </div>
 

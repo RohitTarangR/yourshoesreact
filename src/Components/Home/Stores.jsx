@@ -13,7 +13,7 @@ const Stores = () => {
           {OurStore.map((Store) => {
             return (
               <>
-                <div className="relative">
+                <div className="relative" key={Store.id}>
                   <img
                     src={Store.img}
                     alt="store"
