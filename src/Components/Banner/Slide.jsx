@@ -2,7 +2,6 @@ import Carousel from "react-multi-carousel";
 import "react-multi-carousel/lib/styles.css";
 import { imagesSlider } from "../../data";
 
-
 const responsive = {
   superLargeDesktop: {
     breakpoint: { max: 4000, min: 3000 },
@@ -39,7 +38,7 @@ const Slide = () => {
           removeArrowOnDeviceType={["tablet", "mobile"]}
           dotListClass="custom-dot-list-style"
         >
-          {imagesSlider.map((item)=>{
+          {imagesSlider.map((item) => {
             return (
               <>
                 <div className="w-[100%] h-[100%]" key={item.id}>

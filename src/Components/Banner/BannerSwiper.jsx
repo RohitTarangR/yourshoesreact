@@ -8,7 +8,6 @@ import "swiper/css/effect-flip";
 import { EffectFlip, Autoplay } from "swiper/modules";
 import { MainBannerImg } from "../../data";
 
-
 const BannerSwiper = () => {
   return (
     <>
@@ -25,7 +24,7 @@ const BannerSwiper = () => {
       >
         {MainBannerImg.map((item) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
               <img src={item.img} alt="" />
             </SwiperSlide>
           );

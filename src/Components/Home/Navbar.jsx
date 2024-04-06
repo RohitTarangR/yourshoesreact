@@ -140,7 +140,9 @@ const Navbar = () => {
             />
           </div>
           <div className="flex items-center space-x-3">
+            <Link to="/wishlist">
             <FontAwesomeIcon icon={faHeart} />
+            </Link>
             <Link to="/cart/:id">
               <FontAwesomeIcon icon={faBagShopping} />
             </Link>

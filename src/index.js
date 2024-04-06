@@ -12,6 +12,7 @@ import MenSinglePage from "./Components/ProductPage/ProductOverView";
 import Cart from "./Components/Cart/Cart";
 import Login from "./Components/LoginSignUp/Login";
 import SignUp from "./Components/LoginSignUp/SignUp";
+import WishList from "./Components/WishList/WishList";
 // import ProductMen from './Components/ProductPage/ProductMen';
 
 const router = createBrowserRouter([
@@ -38,6 +39,10 @@ const router = createBrowserRouter([
   {
     path: "/Kids",
     element: <ProductKids />,
+  },
+  {
+    path: "/wishlist",
+    element: <WishList />,
   },
   {
     path: "/productoverview/:id",

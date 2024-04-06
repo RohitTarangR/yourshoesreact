@@ -24,7 +24,7 @@ const SingleProductCarousal = ({ images }) => {
       >
         {images?.map((item) => {
           return (
-            <SwiperSlide>
+            <SwiperSlide key={item.id}>
               <div className="rounded-lg overflow-hidden">
                 <img className="w-full h-full object-cover rounded-lg" src={item} alt="" />
               </div>

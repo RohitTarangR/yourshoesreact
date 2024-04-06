@@ -3,7 +3,14 @@ import Navbar from "../Home/Navbar";
 import Favorites from "../Banner/Favorites";
 import { DeleteOutlineOutlined, FavoriteBorder } from "@mui/icons-material";
 import { Link, useLocation, useParams } from "react-router-dom";
-import { WomenProduct, items, kidsProduct } from "../../data";
+import {
+  FavProduct,
+  FeaturedProd,
+  WomenProduct,
+  items,
+  kidsProduct,
+} from "../../data";
+import { newArrivalData } from "../Banner/NewArrival";
 
 const Cart = () => {
   const { id } = useParams();
@@ -26,6 +33,24 @@ const Cart = () => {
       case "kids":
         const forKids = kidsProduct?.find((item) => item.id === parseInt(id));
         setProduct(forKids);
+        break;
+      case "favourite":
+        const forFavourite = FavProduct?.find(
+          (item) => item.id === parseInt(id)
+        );
+        setProduct(forFavourite);
+        break;
+      case "featured":
+        const forFeatured = FeaturedProd?.find(
+          (item) => item.id === parseInt(id)
+        );
+        setProduct(forFeatured);
+        break;
+      case "newarrival":
+        const forNewArrival = newArrivalData?.find(
+          (item) => item.id === parseInt(id)
+        );
+        setProduct(forNewArrival);
         break;
 
       default:
@@ -111,17 +136,16 @@ const Cart = () => {
                     </tr>
                   </thead>
                   <tbody>
-
-                  <tr>
-                    <td>Estimated Delivery & Handling</td>
-                    <td className="text-end">₹ {deliveryFee}</td>
-                  </tr>
-                  <tr className="font-semibold">
-                    <td>Total</td>
-                    <td className="text-end">
-                      ₹{product?.price + deliveryFee}
-                    </td>
-                  </tr>
+                    <tr>
+                      <td>Estimated Delivery & Handling</td>
+                      <td className="text-end">₹ {deliveryFee}</td>
+                    </tr>
+                    <tr className="font-semibold">
+                      <td>Total</td>
+                      <td className="text-end">
+                        ₹{product?.price + deliveryFee}
+                      </td>
+                    </tr>
                   </tbody>
                 </table>
                 <hr className="my-5" />

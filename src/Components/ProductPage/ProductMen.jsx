@@ -35,7 +35,10 @@ const ProductMen = () => {
             <span className="max-lg:hidden"></span>
             {items.map((item) => {
               return (
-                <div className="item m-3 text-center border border-slate-100 overflow-hidden">
+                <div
+                  className="item m-3 text-center border border-slate-100 overflow-hidden"
+                  key={item.id}
+                >
                   <Link to={`/productoverview/${item.id}?type=men`}>
                     <div className="object-cover w-full ">
                       <img

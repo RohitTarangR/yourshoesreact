@@ -1,9 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { WomenProduct, items, kidsProduct } from "../../data";
+import {
+  FavProduct,
+  FeaturedProd,
+  WomenProduct,
+  items,
+  kidsProduct,
+} from "../../data";
 import { Link, useLocation, useParams } from "react-router-dom";
 import Navbar from "../Home/Navbar";
 import { FavoriteBorderOutlined, Home } from "@mui/icons-material";
 import SingleProductCarousal from "./SingleProductCarousal";
+import { newArrivalData } from "../Banner/NewArrival";
 
 const MenSinglePage = () => {
   const { id } = useParams();
@@ -27,6 +34,27 @@ const MenSinglePage = () => {
         const forKids = kidsProduct?.find((item) => item.id === parseInt(id));
         setProduct(forKids);
         setSection("Kids");
+        break;
+      case "favourite":
+        const forFavourite = FavProduct?.find(
+          (item) => item.id === parseInt(id)
+        );
+        setProduct(forFavourite);
+        setSection("Favourite");
+        break;
+      case "featuredProduct":
+        const forFeatured = FeaturedProd?.find(
+          (item) => item.id === parseInt(id)
+        );
+        setProduct(forFeatured);
+        setSection("featuredProduct");
+        break;
+      case "newarrival":
+        const forNewArrival = newArrivalData?.find(
+          (item) => item.id === parseInt(id)
+        );
+        setProduct(forNewArrival);
+        setSection("NewArrival");
         break;
 
       default:
