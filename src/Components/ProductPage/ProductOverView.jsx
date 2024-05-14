@@ -11,6 +11,9 @@ import Navbar from "../Home/Navbar";
 import { FavoriteBorderOutlined, Home } from "@mui/icons-material";
 import SingleProductCarousal from "./SingleProductCarousal";
 import { newArrivalData } from "../Banner/NewArrival";
+import { addToCart } from "../../utils";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const MenSinglePage = () => {
   const { id } = useParams();
@@ -62,12 +65,20 @@ const MenSinglePage = () => {
     }
   }, [id, productType]);
 
+  const notify = () => toast("Item added to the cart !");
+
   return !product ? (
     <div>No product Found</div>
   ) : (
     <>
       <Navbar />
 
+      <ToastContainer
+        closeOnClick
+        position="top-center"
+        autoClose={1500}
+        pauseOnHover={false}
+      />
       <section className="grid grid-cols-2  items-center max-lg:grid-cols-1">
         <div className="flex justify-end w-4/5 h-[90%] rounded-lg mx-auto p-5 max-lg:w-4/5 max-lg:h-4/5 max-md:w-full max-sm:w-full max-sm:h-full">
           {/* <img src={imgUrl} alt="" width={"100%"} className="object-cover" /> */}
@@ -110,11 +121,15 @@ const MenSinglePage = () => {
             </div>
           </div>
           <div className="btn max-lg:text-center max-sm:flex max-sm:flex-col">
-            <Link to={`/cart/${product?.id}?type=${section}`}>
-              <button className="w-44 max-sm:w-full max-sm:my-2 max-lg:w-60 h-12 bg-black text-white text-[16px] rounded-lg mr-10">
-                Add to Cart
-              </button>
-            </Link>
+            <button
+              onClick={() => {
+                addToCart(product?.id, product);
+                notify();
+              }}
+              className="w-44 max-sm:w-full max-sm:my-2 max-lg:w-60 h-12 bg-black text-white text-[16px] rounded-lg mr-10"
+            >
+              Add to Cart
+            </button>
             <button className="w-44 max-sm:w-full max-sm:my-2 max-lg:w-60 h-12 bg-white text-black border border-gray-400 text-[16px] rounded-lg">
               <FavoriteBorderOutlined className="scale-75 mb-1" /> Add to
               WishList

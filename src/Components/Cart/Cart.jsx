@@ -2,65 +2,54 @@ import React, { useEffect, useState } from "react";
 import Navbar from "../Home/Navbar";
 import Favorites from "../Banner/Favorites";
 import { DeleteOutlineOutlined, FavoriteBorder } from "@mui/icons-material";
-import { Link, useLocation, useParams } from "react-router-dom";
-import {
-  FavProduct,
-  FeaturedProd,
-  WomenProduct,
-  items,
-  kidsProduct,
-} from "../../data";
-import { newArrivalData } from "../Banner/NewArrival";
+import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const Cart = () => {
-  const { id } = useParams();
-  const { search } = useLocation();
-  const [product, setProduct] = useState({});
-  // const [section, setSection] = useState();
-  const productType = new URLSearchParams(search).get("type");
-  const deliveryFee = 250;
+  const [product, setProduct] = useState([]);
 
   useEffect(() => {
-    switch (productType) {
-      case "men":
-        const forMan = items?.find((item) => item.id === parseInt(id));
-        setProduct(forMan);
-        break;
-      case "women":
-        const forWomen = WomenProduct?.find((item) => item.id === parseInt(id));
-        setProduct(forWomen);
-        break;
-      case "kids":
-        const forKids = kidsProduct?.find((item) => item.id === parseInt(id));
-        setProduct(forKids);
-        break;
-      case "favourite":
-        const forFavourite = FavProduct?.find(
-          (item) => item.id === parseInt(id)
-        );
-        setProduct(forFavourite);
-        break;
-      case "featured":
-        const forFeatured = FeaturedProd?.find(
-          (item) => item.id === parseInt(id)
-        );
-        setProduct(forFeatured);
-        break;
-      case "newarrival":
-        const forNewArrival = newArrivalData?.find(
-          (item) => item.id === parseInt(id)
-        );
-        setProduct(forNewArrival);
-        break;
-
-      default:
-        setProduct({});
+    const cartProducts = localStorage.getItem("cart-data");
+    if (cartProducts) {
+      setProduct(JSON.parse(cartProducts));
     }
-  }, [id, productType]);
+  }, []);
 
-  return (
+  const removeFromCart = (id) => {
+    const newFilterData = product?.filter((item) => item.id !== parseInt(id));
+    if (!newFilterData.length) {
+      localStorage.removeItem("cart-data");
+      setProduct([]);
+    } else {
+      setProduct(newFilterData);
+      localStorage.setItem("cart-data", JSON.stringify(newFilterData));
+    }
+  };
+
+  const subtotal = product.reduce(
+    (acc, item) => acc + parseFloat(item.price),
+    0
+  );
+
+  const deliveryAndHandling = 250;
+
+  const total = subtotal + deliveryAndHandling;
+
+  const notify = () =>{toast("Your item succefully removed from the cart !")}
+
+  return !product ? (
+    <div>No products Found</div>
+  ) : (
     <>
       <Navbar />
+
+      <ToastContainer
+        closeOnClick
+        position="top-center"
+        autoClose={1500}
+        pauseOnHover={false}
+      />
 
       <section
         id="cart"
@@ -75,50 +64,67 @@ const Cart = () => {
                 <h2 className="text-3xl font-semibold py-5 max-md:text-2xl">
                   Bag
                 </h2>
-                <div className="flex space-x-3">
-                  <div className="w-40">
-                    <img src={product?.imgUrl} alt="" />
+                {product?.length === 0 ? (
+                  <div className="py-3">
+                    Your Cart is Empty ! Go and Checkout our latest Collection !
                   </div>
-                  <div className="space-y-2">
-                    <div className="flex max-sm:flex-col max-sm:justify-normal max-sm:items-start justify-between items-center">
-                      <p className="font-semibold text-start">
-                        {product?.productName}
-                      </p>
-                      <p className="font-semibold text-end  max-sm:mt-1 ">
-                        MRP: ₹ {product?.price}
-                      </p>
-                    </div>
-                    <p className="text-gray-600">Basketball Shoes</p>
-                    <p className="text-gray-600">
-                      Black/Bright Crimson/Wolf Grey/White
-                    </p>
-                    <div className="flex space-x-10">
-                      <div className="flex space-x-3">
-                        <p className="text-gray-600">Size </p>
-                        <select name="" id="" className="text-gray-600">
-                          <option value="">8</option>
-                          <option value="">9</option>
-                          <option value="">10</option>
-                          <option value="">11</option>
-                        </select>
+                ) : (
+                  product?.map((value) => (
+                    <div className="flex space-x-3 my-2">
+                      <div className="w-40">
+                        <img src={value?.imgUrl} alt="" />
                       </div>
-                      <div className="flex space-x-3">
-                        <p className="text-gray-600">Quantity </p>
-                        <select name="" id="" className="text-gray-600">
-                          <option value="">1</option>
-                          <option value="">2</option>
-                          <option value="">3</option>
-                          <option value="">4</option>
-                          <option value="">5</option>
-                        </select>
+                      <div className="space-y-2">
+                        <div className="flex max-sm:flex-col max-sm:justify-normal max-sm:items-start justify-between items-center">
+                          <p className="font-semibold text-start">
+                            {value?.productName}
+                          </p>
+                          <p className="font-semibold text-end  max-sm:mt-1 ">
+                            MRP: ₹ {value?.price}
+                          </p>
+                        </div>
+                        <p className="text-gray-600">Basketball Shoes</p>
+                        <p className="text-gray-600">
+                          Black/Bright Crimson/Wolf Grey/White
+                        </p>
+                        <div className="flex space-x-10">
+                          <div className="flex space-x-3">
+                            <p className="text-gray-600">Size </p>
+                            <select name="" id="" className="text-gray-600">
+                              <option value="">8</option>
+                              <option value="">9</option>
+                              <option value="">10</option>
+                              <option value="">11</option>
+                            </select>
+                          </div>
+                          <div className="flex space-x-3">
+                            <p className="text-gray-600">Quantity :</p>
+                            <input
+                              type="number"
+                              name=""
+                              id=""
+                              value={value?.qty}
+                              className="appearance-none outline-none"
+                            />
+                          </div>
+                        </div>
+                        <div className="space-x-5 flex">
+                          <button>
+                            <FavoriteBorder />
+                          </button>
+                          <button
+                            onClick={() => {
+                              removeFromCart(value?.id);
+                              notify();
+                            }}
+                          >
+                            <DeleteOutlineOutlined />
+                          </button>
+                        </div>
                       </div>
                     </div>
-                    <div className="space-x-5">
-                      <FavoriteBorder />
-                      <DeleteOutlineOutlined />
-                    </div>
-                  </div>
-                </div>
+                  ))
+                )}
                 <hr className="my-5" />
               </div>
             </div>
@@ -132,18 +138,20 @@ const Cart = () => {
                   <thead>
                     <tr>
                       <td>Subtotal</td>
-                      <td className="text-end">₹ {product?.price}</td>
+                      <td className="text-end">₹ {subtotal}</td>
                     </tr>
                   </thead>
                   <tbody>
                     <tr>
-                      <td>Estimated Delivery & Handling</td>
-                      <td className="text-end">₹ {deliveryFee}</td>
+                      <td>Delivery & Handling</td>
+                      <td className="text-end">
+                        ₹ {product.length === 0 ? 0 : deliveryAndHandling}
+                      </td>
                     </tr>
                     <tr className="font-semibold">
                       <td>Total</td>
                       <td className="text-end">
-                        ₹{product?.price + deliveryFee}
+                        ₹{product.length === 0 ? 0 : total}
                       </td>
                     </tr>
                   </tbody>

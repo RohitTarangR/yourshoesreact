@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Home/Navbar";
 import { WomenProduct } from "../../data";
 import SideBar from "./SideBar";
@@ -10,12 +10,42 @@ import {
 } from "@mui/icons-material/";
 import Footer from "../Footer/Footer";
 import { Link } from "react-router-dom";
+import { addToCart } from "../../utils";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
+
+const ProductCardSkeleton = () => {
+  return (
+    <div className="item m-3 text-center border border-slate-100 overflow-hidden animate-pulse rounded-lg">
+      <div className="object-cover w-80 h-80 max-sm:h-56 max-md:object-contain  bg-gray-300 rounded-lg"></div>
+      <div className="h-12 bg-gray-300 my-2 rounded-lg"></div>
+      <div className="h-10 bg-gray-300 rounded-lg"></div>
+    </div>
+  );
+};
 
 const ProductWomen = () => {
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+      // Simulate loading delay
+      const timer = setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+
+      // Clear the timer on component unmount
+      return () => clearTimeout(timer);
+    }, []);
+   const notify = () => toast("Item added to the cart !");
   return (
     <>
       <Navbar />
-
+      <ToastContainer
+        closeOnClick
+        position="top-center"
+        autoClose={1500}
+        pauseOnHover={false}
+      />
       <div className="flex justify-center">
         <div className="w-1/6 px-10 max-lg:p-0 max-lg:hidden">
           <SideBar />
@@ -33,7 +63,13 @@ const ProductWomen = () => {
           </div>
           <div className="container flex flex-wrap justify-center space-y-10 max-lg:grid max-lg:grid-cols-2">
             <span className="max-lg:hidden"></span>
-            {WomenProduct.map((item, i) => {
+             {loading
+              ? // Skeleton loader while loading
+                Array.from({ length: 15 }).map((_, index) => (
+                  <ProductCardSkeleton key={index} />
+                ))
+              :
+            WomenProduct.map((item, i) => {
               return (
                 <div className="item m-3 text-center border border-slate-100 overflow-hidden">
                   <Link to={`/productoverview/${item.id}?type=women`}>
@@ -51,12 +87,16 @@ const ProductWomen = () => {
                   </p>
 
                   <div className="flex flex-col justify-center relative">
-                    <Link to={`/cart/${item.id}?type=women`}>
-                      <button className=" text-sm max-sm:text-xs font-bold w-full bg-black h-[40px] max-sm:h-[35px] my-2 flex items-center justify-center rounded-md cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-zinc-300 before:to-zinc-300 hover:text-black before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 text-[#fff]">
-                        Add to Cart
-                        <ShoppingCart className="mx-2 scale-90 max-sm:scale-75" />
-                      </button>
-                    </Link>
+                    <button
+                      onClick={() => {
+                        addToCart(item?.id, item);
+                        notify();
+                      }}
+                      className=" text-sm max-sm:text-xs font-bold w-full bg-black h-[40px] max-sm:h-[35px] my-2 flex items-center justify-center rounded-md cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-zinc-300 before:to-zinc-300 hover:text-black before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 text-[#fff]"
+                    >
+                      Add to Cart
+                      <ShoppingCart className="mx-2 scale-90 max-sm:scale-75" />
+                    </button>
 
                     <button className=" text-sm max-sm:text-xs font-bold w-full  bg-zinc-300 h-[40px] max-sm:h-[35px] my-1 flex items-center justify-center rounded-md cursor-pointer relative overflow-hidden transition-all duration-500 ease-in-out shadow-md hover:scale-105 hover:shadow-lg before:absolute before:top-0 before:-left-full before:w-full before:h-full before:bg-gradient-to-r before:from-black before:to-black hover:text-zinc-300 before:transition-all before:duration-500 before:ease-in-out before:z-[-1] before:rounded-md hover:before:left-0 text-[#000]">
                       Buy Now
@@ -65,7 +105,8 @@ const ProductWomen = () => {
                   </div>
                 </div>
               );
-            })}
+            })
+          }
           </div>
         </div>
       </div>

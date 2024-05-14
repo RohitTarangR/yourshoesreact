@@ -49,9 +49,13 @@ const router = createBrowserRouter([
     element: <MenSinglePage />,
   },
   {
-    path: "/cart/:id",
+    path: "/cart/",
     element: <Cart />,
   },
+  // {
+  //   path: "/addtocart",
+  //   element: <AddToCart />,
+  // },
   {
     path: "/login",
     element: <Login />,

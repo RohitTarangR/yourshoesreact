@@ -1,19 +1,42 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import l1 from "../../Assests/img/Your_Shoes.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faAngleDown, faBagShopping, faBars, faHeart, faMagnifyingGlass, faUserCircle, faXmark } from "@fortawesome/free-solid-svg-icons";
+import {
+  faAngleDown,
+  faBagShopping,
+  faBars,
+  faHeart,
+  faMagnifyingGlass,
+  faUserCircle,
+  faXmark,
+} from "@fortawesome/free-solid-svg-icons";
 import { Link } from "react-router-dom";
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
 
-    const [isOpen, setIsOpen] = useState(false);
+  const [cardCount, setCardCount] = useState(0);
 
-    const openNavbar = () => {
-      setIsOpen(true);
-    };
+  const openNavbar = () => {
+    setIsOpen(true);
+  };
 
-    const closeNavbar = () => {
-      setIsOpen(false);
-    };
+  const closeNavbar = () => {
+    setIsOpen(false);
+  };
+
+const updateCardCount = () => {
+  const cardProducts = localStorage.getItem("cart-data"); // Corrected
+  if (cardProducts) {
+    const product = JSON.parse(cardProducts);
+    setCardCount(product?.length);
+  }
+};
+
+  useEffect(() => {
+    updateCardCount();
+  
+  }, [])
+
 
   return (
     <>
@@ -25,14 +48,14 @@ const Navbar = () => {
       </div>
 
       <main className="flex justify-around items-center max-sm:justify-between max-sm:px-10 shadow-md sticky top-0 z-50 bg-white">
-          <Link to="/">
-            <img
-              src={l1}
-              alt=""
-              width={70}
-              className="hover:scale-125 transition-all duration-300"
-            />
-          </Link>
+        <Link to="/">
+          <img
+            src={l1}
+            alt=""
+            width={70}
+            className="hover:scale-125 transition-all duration-300"
+          />
+        </Link>
 
         {/* desktop navbar  */}
 
@@ -139,12 +162,13 @@ const Navbar = () => {
               className="absolute left-2 top-2"
             />
           </div>
-          <div className="flex items-center space-x-3">
+          <div className="flex items-center space-x-3 relative">
             <Link to="/wishlist">
-            <FontAwesomeIcon icon={faHeart} />
+              <FontAwesomeIcon icon={faHeart} />
             </Link>
-            <Link to="/cart/:id">
+            <Link to="/cart/" className="flex justify-center items-center">
               <FontAwesomeIcon icon={faBagShopping} />
+              {cardCount > 0 && <span className="bg-red-500 text-white justify-center w-4 h-4 items-center flex rounded-full text-xs absolute top-0 right-5 max-sm:right-12">{cardCount}</span>}
             </Link>
             <Link to="/login">
               <FontAwesomeIcon icon={faUserCircle} />
